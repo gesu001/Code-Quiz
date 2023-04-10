@@ -190,15 +190,16 @@ formEl.appendChild(btnEl);
 
 
 
-
+var secondsLeft = 15;
 
 startBtnEl.addEventListener("click", function(){
-    var secondsLeft = 75;
+    //var secondsLeft = 5;
     var timerInterval = setInterval(() => {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds remaining"
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
+            //flashCardEl.innerHTML =" ";
             sendMessage();
         }
         flashCardEl.replaceChild(card2, card1)  
@@ -221,10 +222,12 @@ startBtnEl.addEventListener("click", function(){
 
          //var btn5 = document.querySelector(".btn5")
          btn.forEach(addEventListener("click", function() {
-          flashCardEl.replaceChild(card7, card6);
-          var pEl = document.createElement("p");
-          pEl.textContent = "Your final score is " + secondsLeft + " .";
-          card7.appendChild(pEl);
+            clearInterval(timerInterval);
+            sendMessage();
+          //flashCardEl.replaceChild(card7, card6);
+          //var pEl = document.createElement("p");
+          //pEl.textContent = "Your final score is " + secondsLeft + " .";
+          //card7.appendChild(pEl);
         }));
         }));
         }));
@@ -232,3 +235,36 @@ startBtnEl.addEventListener("click", function(){
         }));
     }, 1000);
 });
+
+function sendMessage () {
+flashCardEl.innerHTML =" ";
+
+var card7 = document.createElement("div");
+var h1El = document.createElement("h1");
+var pEl = document.createElement("p");
+var formEl = document.createElement("form");
+var labelEl = document.createElement("lable");
+var inputEl = document.createElement("input")
+var btnEl = document.createElement("button");
+
+
+card7.className = "cards";
+
+h1El.textContent = "All Done!";
+
+formEl.textContent = "Enter Initials: ";
+btnEl.textContent = "Submit";
+
+flashCardEl.appendChild(card7);
+card7.appendChild(h1El);
+card7.appendChild(pEl);
+card7.appendChild(formEl);
+formEl.appendChild(labelEl);
+formEl.appendChild(inputEl);
+formEl.appendChild(btnEl);
+
+
+
+pEl.textContent = "Your final score is " + secondsLeft + ".";
+
+}
