@@ -7,7 +7,6 @@ var h1El = document.createElement("h1");
 var pEl = document.createElement("p");
 var startBtnEl = document.createElement("button");
 
-
 h1El.textContent = "Coding Quiz Challenge";
 pEl.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!"
 startBtnEl.textContent = "Start Quiz";
@@ -21,7 +20,9 @@ card1.setAttribute("style", "margin:auto; width:50%; text-align: center; padding
 h1El.setAttribute("style", "font-size: 60px; font-weigh: bolder;")
 pEl.setAttribute("style", "font-size: 30px; font-weigh: bolder;")
 
-startBtnEl.className = "startBtn";
+//startBtnEl.className = "startBtn";
+
+
 
 var card2 = document.createElement("div");
 var h1El = document.createElement("h1");
@@ -31,9 +32,10 @@ var btnEl3 = document.createElement("button");
 var btnEl4 = document.createElement("button");
 
 btnEl1.className = "btns btn1";
-btnEl2.className = "btns btn1";
-btnEl3.className = "btns btn1";
-btnEl4.className = "btns btn1";
+btnEl2.className = "btns btn2";
+btnEl3.className = "btns";
+btnEl4.className = "btns btn4";
+btnEl3.id = "btn3"
 card2.className = "cards"
 
 h1El.textContent = "Commonly used data types DO NOT include:";
@@ -189,6 +191,11 @@ formEl.appendChild(btnEl);
 
 
 
+var note = document.createElement("div");
+var h2El = document.createElement("h1");
+flashCardEl.appendChild(note)
+note.appendChild(h2El);
+
 
 var secondsLeft = 15;
 
@@ -204,9 +211,16 @@ startBtnEl.addEventListener("click", function(){
         }
         flashCardEl.replaceChild(card2, card1)  
 
+
+
         var btn = document.querySelectorAll(".btns")
-        btn.forEach(addEventListener("click", function() {
-         flashCardEl.replaceChild(card3, card2);
+
+       btn.forEach(addEventListener("click", function() {
+
+
+       flashCardEl.replaceChild(card3, card2);
+
+
 
          //var btn2 = document.querySelector(".btn2")
         btn.forEach(addEventListener("click", function() {
