@@ -1,6 +1,6 @@
 # Code-Quiz
 
-![Code-Quiz ScreenShot]()
+![Code-Quiz ScreenShot](./assets/images/Coding%20Quiz%20Screenshot.png)
 
 ## Description
 
@@ -24,7 +24,7 @@ N/A
 
 To use this application, simple click the link below to the webpage, click the "Start Quiz" button and follow the prompts to enter you choice. Enter your initials and your highscores will be recorded/
 
-* [Coding Quiz]()
+* [Coding Quiz](https://gesu001.github.io/Code-Quiz/)
 
 
 ## Contributing
