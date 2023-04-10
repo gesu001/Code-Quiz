@@ -1,0 +1,31 @@
+#highscores {
+    text-decoration: none;
+    color: rgb(66, 15, 147);
+};
+
+.flashCard-container {
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.cards {
+    margin: auto;
+    width: 50%;
+    padding-top: 50px;
+}
+
+.btns {
+    font-size: 30px;
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    border-style: none;
+    background-color: rgb(66, 15, 147);
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btns:hover {
+    background-color: rgb(215, 51, 244);
+}
