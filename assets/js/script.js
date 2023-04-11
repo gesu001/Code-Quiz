@@ -1,6 +1,8 @@
 var highscores = document.querySelector("#highscores")
 var timeEl = document.querySelector("#timer");
 var flashCardEl = document.querySelector(".flashCard-container");
+var answerEl = document.querySelector(".answer");
+
 
 var card1 = document.createElement("div");
 var h1El = document.createElement("h1");
@@ -20,265 +22,287 @@ card1.setAttribute("style", "margin:auto; width:50%; text-align: center; padding
 h1El.setAttribute("style", "font-size: 60px; font-weigh: bolder;")
 pEl.setAttribute("style", "font-size: 30px; font-weigh: bolder;")
 
-//startBtnEl.className = "startBtn";
 
-
-
-var card2 = document.createElement("div");
-var h1El = document.createElement("h1");
+var card = document.createElement("div");
+var quesEl = document.createElement("h1");
 var btnEl1 = document.createElement("button");
 var btnEl2 = document.createElement("button");
 var btnEl3 = document.createElement("button");
 var btnEl4 = document.createElement("button");
+var hintEl = document.createElement("p")
 
-btnEl1.className = "btns btn1";
-btnEl2.className = "btns btn2";
+
+
+card.className = "cards";
+quesEl.className = "questions";
+btnEl1.className = "btns";
+btnEl2.className = "btns";
 btnEl3.className = "btns";
-btnEl4.className = "btns btn4";
-btnEl3.id = "btn3"
-card2.className = "cards"
+btnEl4.className = "btns";
+hintEl.className = "cards";
 
-h1El.textContent = "Commonly used data types DO NOT include:";
+
+
+
+card.appendChild(quesEl);
+card.appendChild(btnEl1);
+card.appendChild(btnEl2);
+card.appendChild(btnEl3);
+card.appendChild(btnEl4);
+answerEl.appendChild(hintEl)
+
+
+function  QuizQuestion1() {
+  flashCardEl.innerHTML = "";
+quesEl.textContent = "Commonly used data types DO NOT include:";
 btnEl1.textContent = "1. strings";
 btnEl2.textContent = "2. booleans";
 btnEl3.textContent = "3. alerts";
 btnEl4.textContent = "4. numbers";
-
-//flashCardEl.appendChild(card2);
-card2.appendChild(h1El);
-card2.appendChild(btnEl1);
-card2.appendChild(btnEl2);
-card2.appendChild(btnEl3);
-card2.appendChild(btnEl4);
+flashCardEl.appendChild(card);
 
 
-var card3 = document.createElement("div");
-var h1El = document.createElement("h1");
-var btnEl1 = document.createElement("button");
-var btnEl2 = document.createElement("button");
-var btnEl3 = document.createElement("button");
-var btnEl4 = document.createElement("button");
+btnEl3.id = "btnC"
+btnEl1.id = "btn"
+btnEl2.id = "btn"
+btnEl4.id = "btn"
 
-btnEl1.className = "btns btn2";
-btnEl2.className = "btns btn2";
-btnEl3.className = "btns btn2";
-btnEl4.className = "btns btn2";
-card3.className = "cards"
+var btnC = document.querySelector("#btnC")
+var btnW = document.querySelectorAll("#btn")
 
-h1El.textContent = "The condition in an if/else statement is enclosed within __.";
+function answer() {
+  btnC.addEventListener("click", function() {
+        hintEl.textContent = "Correct";
+        QuizQuestion2();
+       });
+
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+       hintEl.textContent = "Wrong";
+       QuizQuestion2();
+       });
+       }
+     }
+     answer();    
+}
+
+//Quiz 2
+function  QuizQuestion2() {
+quesEl.textContent = "The condition in an if/else statement is enclosed within __.";
 btnEl1.textContent = "1. quotes";
 btnEl2.textContent = "2. curly brackets";
 btnEl3.textContent = "3. parentheses";
 btnEl4.textContent = "4. square brackets";
-
-//flashCardEl.appendChild(card3);
-card3.appendChild(h1El);
-card3.appendChild(btnEl1);
-card3.appendChild(btnEl2);
-card3.appendChild(btnEl3);
-card3.appendChild(btnEl4);
+flashCardEl.appendChild(card);
+answerEl.appendChild(hintEl);
 
 
-var card4 = document.createElement("div");
-var h1El = document.createElement("h1");
-var btnEl1 = document.createElement("button");
-var btnEl2 = document.createElement("button");
-var btnEl3 = document.createElement("button");
-var btnEl4 = document.createElement("button");
+btnEl3.id = "btnC"
+btnEl1.id = "btn"
+btnEl2.id = "btn"
+btnEl4.id = "btn"
 
-btnEl1.className = "btns btn3";
-btnEl2.className = "btns btn3";
-btnEl3.className = "btns btn3";
-btnEl4.className = "btns btn3";
-card4.className = "cards"
+var btnC = document.querySelector("#btnC")
+var btnW = document.querySelectorAll("#btn")
 
+function answer() {
+  btnC.addEventListener("click", function() {
+        hintEl.textContent = "Correct";
+        QuizQuestion3()
+       });
 
-h1El.textContent = "Arrays in JavaScript can be used to store ___.";
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+       hintEl.textContent = "Wrong";
+       QuizQuestion3()
+       });
+       }
+     }
+     answer(); 
+}
+
+//Quiz 3
+function  QuizQuestion3() {
+  flashCardEl.innerHTML = "";
+
+quesEl.textContent = "Arrays in JavaScript can be used to store ___.";
 btnEl1.textContent = "1. numbers and strings";
 btnEl2.textContent = "2. other arrays";
 btnEl3.textContent = "3. booleans";
 btnEl4.textContent = "4. all of the above";
+flashCardEl.appendChild(card);
+answerEl.appendChild(hintEl);
 
-//flashCardEl.appendChild(card4);
-card4.appendChild(h1El);
-card4.appendChild(btnEl1);
-card4.appendChild(btnEl2);
-card4.appendChild(btnEl3);
-card4.appendChild(btnEl4);
+btnEl4.id = "btnC"
+btnEl1.id = "btn"
+btnEl2.id = "btn"
+btnEl3.id = "btn"
 
+var btnC = document.querySelector("#btnC")
+var btnW = document.querySelectorAll("#btn")
 
-var card5 = document.createElement("div");
-var h1El = document.createElement("h1");
-var btnEl1 = document.createElement("button");
-var btnEl2 = document.createElement("button");
-var btnEl3 = document.createElement("button");
-var btnEl4 = document.createElement("button");
+function answer() {
+  btnC.addEventListener("click", function() {
+        hintEl.textContent = "Correct";
+        QuizQuestion4()
+       });
 
-btnEl1.className = "btns btn4";
-btnEl2.className = "btns btn4";
-btnEl3.className = "btns btn4";
-btnEl4.className = "btns btn4";
-card5.className = "cards"
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+       hintEl.textContent = "Wrong";
+       QuizQuestion4()
+       });
+       }
+     }
+     answer();    
+}
 
-h1El.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
+//Quiz 4
+function  QuizQuestion4() {
+  flashCardEl.innerHTML = "";
+
+quesEl.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
 btnEl1.textContent = "1. JavaScript";
 btnEl2.textContent = "2. terminal/blash";
 btnEl3.textContent = "3. for loops";
 btnEl4.textContent = "4. comsole.log";
+flashCardEl.appendChild(card);
+answerEl.appendChild(hintEl);
 
-//flashCardEl.appendChild(card5);
-card5.appendChild(h1El);
-card5.appendChild(btnEl1);
-card5.appendChild(btnEl2);
-card5.appendChild(btnEl3);
-card5.appendChild(btnEl4);
+btnEl4.id = "btnC"
+btnEl1.id = "btn"
+btnEl2.id = "btn"
+btnEl3.id = "btn"
 
+var btnC = document.querySelector("#btnC")
+var btnW = document.querySelectorAll("#btn")
 
+function answer() {
+  btnC.addEventListener("click", function() {
+        hintEl.textContent = "Correct";
+        QuizQuestion5()
+       });
 
-var card6 = document.createElement("div");
-var h1El = document.createElement("h1");
-var btnEl1 = document.createElement("button");
-var btnEl2 = document.createElement("button");
-var btnEl3 = document.createElement("button");
-var btnEl4 = document.createElement("button");
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+       hintEl.textContent = "Wrong";
+       QuizQuestion5()
+       });
+       }
+     }
+     answer();    
+}
 
-btnEl1.className = "btns btn5";
-btnEl2.className = "btns btn5";
-btnEl3.className = "btns btn5";
-btnEl4.className = "btns btn5";
-card6.className = "cards"
-
-
-h1El.textContent = "String values must be enclosed within ___ when being assigned to a variables.";
+//Quiz 5
+function  QuizQuestion5() {
+flashCardEl.innerHTML = "";
+quesEl.textContent = "String values must be enclosed within ___ when being assigned to a variables.";
 btnEl1.textContent = "1. commas";
 btnEl2.textContent = "2. curly brackets";
 btnEl3.textContent = "3. parentheses";
 btnEl4.textContent = "4. quotes";
+flashCardEl.appendChild(card);
+answerEl.appendChild(hintEl);
 
-//flashCardEl.appendChild(card6);
-card6.appendChild(h1El);
-card6.appendChild(btnEl1);
-card6.appendChild(btnEl2);
-card6.appendChild(btnEl3);
-card6.appendChild(btnEl4);
+btnEl4.id = "btnC"
+btnEl1.id = "btn"
+btnEl2.id = "btn"
+btnEl3.id = "btn"
 
+var btnC = document.querySelector("#btnC")
+var btnW = document.querySelectorAll("#btn")
 
+function answer() {
+  btnC.addEventListener("click", function() {
+        hintEl.textContent = "Correct";
+        //clearInterval(timerInterval);
+        sendMessage()
+        ;
+       });
 
-var card7 = document.createElement("div");
-var h1El = document.createElement("h1");
-var formEl = document.createElement("form");
-var labelEl = document.createElement("lable");
-var inputEl = document.createElement("input")
-var btnEl = document.createElement("button");
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+       hintEl.textContent = "Wrong";
+       //clearInterval(timerInterval);
+       sendMessage();
+       })
+     }
+    }
+     answer();
+}
 
+var secondsLeft = 75;
 
+startBtnEl.addEventListener("click", function() {
+  var timerInterval = setInterval(() => {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds remaining"
+    if(secondsLeft === 0) {
+     clearInterval(timerInterval);
+     sendMessage();
+    }}, 1000);
+ QuizQuestion1()});
 
-card7.className = "cards"
+function sendMessage() {
+  
+  flashCardEl.innerHTML = " ";
+  hintEl.textContent = "";
+  var card = document.createElement("div");
+  var h1El = document.createElement("h1");
+  var pEl = document.createElement("p")
+  var formEl = document.createElement("form");
+  var nameEl = document.createElement("lable");
+  var inputEl = document.createElement("input")
+  var btnEl = document.createElement("button");
 
-
-
-h1El.textContent = "All done!";
-
-formEl.textContent = "Enter Initials: ";
-btnEl.textContent = "Submit";
-
-//flashCardEl.appendChild(card7);
-card7.appendChild(h1El);
-card7.appendChild(formEl);
-formEl.appendChild(labelEl);
-formEl.appendChild(inputEl);
-formEl.appendChild(btnEl);
-
-
-
-var note = document.createElement("div");
-var h2El = document.createElement("h1");
-flashCardEl.appendChild(note)
-note.appendChild(h2El);
-
-
-var secondsLeft = 15;
-
-startBtnEl.addEventListener("click", function(){
-    //var secondsLeft = 5;
-    var timerInterval = setInterval(() => {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds remaining"
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            //flashCardEl.innerHTML =" ";
-            sendMessage();
-        }
-        flashCardEl.replaceChild(card2, card1)  
-
-
-
-        var btn = document.querySelectorAll(".btns")
-
-       btn.forEach(addEventListener("click", function() {
-
-
-       flashCardEl.replaceChild(card3, card2);
-
-
-
-         //var btn2 = document.querySelector(".btn2")
-        btn.forEach(addEventListener("click", function() {
-         flashCardEl.replaceChild(card4, card3);
-         
-         //var btn3 = document.querySelector(".btn3")
-        btn.forEach(addEventListener("click", function() {
-         flashCardEl.replaceChild(card5, card4);
-         
-         //var btn4 = document.querySelector(".btn4")
-        btn.forEach(addEventListener("click", function() {
-         flashCardEl.replaceChild(card6, card5);
-
-         //var btn5 = document.querySelector(".btn5")
-         btn.forEach(addEventListener("click", function() {
-            clearInterval(timerInterval);
-            sendMessage();
-          //flashCardEl.replaceChild(card7, card6);
-          //var pEl = document.createElement("p");
-          //pEl.textContent = "Your final score is " + secondsLeft + " .";
-          //card7.appendChild(pEl);
-        }));
-        }));
-        }));
-        }));
-        }));
-    }, 1000);
-});
-
-function sendMessage () {
-flashCardEl.innerHTML =" ";
-
-var card7 = document.createElement("div");
-var h1El = document.createElement("h1");
-var pEl = document.createElement("p");
-var formEl = document.createElement("form");
-var labelEl = document.createElement("lable");
-var inputEl = document.createElement("input")
-var btnEl = document.createElement("button");
-
-
-card7.className = "cards";
-
-h1El.textContent = "All Done!";
-
-formEl.textContent = "Enter Initials: ";
-btnEl.textContent = "Submit";
-
-flashCardEl.appendChild(card7);
-card7.appendChild(h1El);
-card7.appendChild(pEl);
-card7.appendChild(formEl);
-formEl.appendChild(labelEl);
-formEl.appendChild(inputEl);
-formEl.appendChild(btnEl);
+ 
+  
+  card.className = "cards"
+  h1El.textContent = "All done!";
+  pEl.textContent = "Your final score is " + secondsLeft + ".";
+  nameEl.textContent = "Enter Initials: ";
+  btnEl.textContent = "Submit";
+  
+  flashCardEl.appendChild(card);
+  card.appendChild(h1El);
+  card.appendChild(pEl);
+  card.appendChild(formEl);
+  formEl.appendChild(nameEl);
+  formEl.appendChild(inputEl);
+  formEl.appendChild(btnEl);
 
 
 
-pEl.textContent = "Your final score is " + secondsLeft + ".";
 
+
+btnEl.addEventListener("click", function(event){
+
+event.preventDefault()
+//clearInterval(timerInterval);
+
+flashCardEl.innerHTML = ""
+
+
+var highscores = document.querySelector(".highscores")
+var scoreEl = document.createElement("h1")
+var returnBtn = document.createElement("button")
+var clearBtn = document.createElement("button")
+highscores.appendChild(scoreEl);
+highscores.appendChild(returnBtn);
+highscores.appendChild(clearBtn);
+highscores.className = "cards";
+
+
+var name = inputEl.value
+
+localStorage.setItem("name", name);
+localStorage.setItem("scores", secondsLeft)
+
+scoreEl.innerHTML = "Highscores"+ "<br>" + localStorage.getItem("name") + ": " + localStorage.getItem("scores");
+
+returnBtn.textContent = "Go Back";
+clearBtn.textContent = "Clear Highscres";
+
+
+})
 }
