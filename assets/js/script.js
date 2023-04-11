@@ -31,8 +31,6 @@ var btnEl3 = document.createElement("button");
 var btnEl4 = document.createElement("button");
 var hintEl = document.createElement("p")
 
-
-
 card.className = "cards";
 quesEl.className = "questions";
 btnEl1.className = "btns";
@@ -40,9 +38,6 @@ btnEl2.className = "btns";
 btnEl3.className = "btns";
 btnEl4.className = "btns";
 hintEl.className = "cards";
-
-
-
 
 card.appendChild(quesEl);
 card.appendChild(btnEl1);
@@ -70,7 +65,6 @@ btnEl4.id = "btn"
 var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
-function answer() {
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
         QuizQuestion2();
@@ -83,8 +77,7 @@ function answer() {
        });
        }
      }
-     answer();    
-}
+
 
 //Quiz 2
 function  QuizQuestion2() {
@@ -105,7 +98,7 @@ btnEl4.id = "btn"
 var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
-function answer() {
+
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
         QuizQuestion3()
@@ -118,8 +111,7 @@ function answer() {
        });
        }
      }
-     answer(); 
-}
+
 
 //Quiz 3
 function  QuizQuestion3() {
@@ -141,7 +133,7 @@ btnEl3.id = "btn"
 var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
-function answer() {
+
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
         QuizQuestion4()
@@ -154,8 +146,7 @@ function answer() {
        });
        }
      }
-     answer();    
-}
+
 
 //Quiz 4
 function  QuizQuestion4() {
@@ -177,7 +168,7 @@ btnEl3.id = "btn"
 var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
-function answer() {
+
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
         QuizQuestion5()
@@ -190,8 +181,6 @@ function answer() {
        });
        }
      }
-     answer();    
-}
 
 //Quiz 5
 function  QuizQuestion5() {
@@ -212,39 +201,45 @@ btnEl3.id = "btn"
 var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
-function answer() {
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
-        //clearInterval(timerInterval);
-        sendMessage()
+        //toStop();
+        clearInterval(timerInterval)
+        sendMessage();
         ;
        });
 
   for (i of btnW) {
        i.addEventListener("click", function() {
        hintEl.textContent = "Wrong";
-       //clearInterval(timerInterval);
+       //toStop();
+       clearInterval(timerInterval)
        sendMessage();
        })
      }
     }
-     answer();
-}
+
+startBtnEl.addEventListener("click", QuizQuestion1);
 
 var secondsLeft = 75;
 
-startBtnEl.addEventListener("click", function() {
-  var timerInterval = setInterval(() => {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds remaining"
-    if(secondsLeft === 0) {
-     clearInterval(timerInterval);
-     sendMessage();
-    }}, 1000);
- QuizQuestion1()});
+var timerInterval = setInterval(toStart, 1000)
+
+function toStart(){ 
+  secondsLeft--;
+  timeEl.textContent = secondsLeft + " seconds remaining"
+  if(secondsLeft === 0) {
+   clearInterval(timerInterval);
+   sendMessage();
+  } 
+};
+
+function toStop(){
+  clearInterval(timerInterval)
+}
 
 function sendMessage() {
-  
+  //clearInterval(timerInterval);
   flashCardEl.innerHTML = " ";
   hintEl.textContent = "";
   var card = document.createElement("div");
@@ -254,8 +249,6 @@ function sendMessage() {
   var nameEl = document.createElement("lable");
   var inputEl = document.createElement("input")
   var btnEl = document.createElement("button");
-
- 
   
   card.className = "cards"
   h1El.textContent = "All done!";
@@ -271,17 +264,12 @@ function sendMessage() {
   formEl.appendChild(inputEl);
   formEl.appendChild(btnEl);
 
-
-
-
-
 btnEl.addEventListener("click", function(event){
 
 event.preventDefault()
 //clearInterval(timerInterval);
 
 flashCardEl.innerHTML = ""
-
 
 var highscores = document.querySelector(".highscores")
 var scoreEl = document.createElement("h1")
@@ -292,7 +280,6 @@ highscores.appendChild(returnBtn);
 highscores.appendChild(clearBtn);
 highscores.className = "cards";
 
-
 var name = inputEl.value
 
 localStorage.setItem("name", name);
@@ -302,7 +289,4 @@ scoreEl.innerHTML = "Highscores"+ "<br>" + localStorage.getItem("name") + ": " +
 
 returnBtn.textContent = "Go Back";
 clearBtn.textContent = "Clear Highscres";
-
-
-})
-}
+})}
