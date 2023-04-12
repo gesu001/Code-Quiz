@@ -3,7 +3,6 @@ var timeEl = document.querySelector("#timer");
 var flashCardEl = document.querySelector(".flashCard-container");
 var answerEl = document.querySelector(".answer");
 
-
 var card1 = document.createElement("div");
 var h1El = document.createElement("h1");
 var pEl = document.createElement("p");
@@ -66,13 +65,13 @@ var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
   btnC.addEventListener("click", function() {
-        hintEl.textContent = "Correct";
+        hintEl.innerHTML = "<hr> Correct";
         QuizQuestion2();
        });
 
   for (i of btnW) {
        i.addEventListener("click", function() {
-       hintEl.textContent = "Wrong";
+       hintEl.innerHTML = "<hr> Wrong";
        QuizQuestion2();
        });
        }
@@ -100,7 +99,7 @@ var btnW = document.querySelectorAll("#btn")
 
 
   btnC.addEventListener("click", function() {
-        hintEl.textContent = "Correct";
+        hintEl.innerHTML = "<hr> Correct";
        
         QuizQuestion3()
        });
@@ -110,7 +109,7 @@ var btnW = document.querySelectorAll("#btn")
         if (this.clicked){
           secondsLeft-= 15;
         }
-       hintEl.textContent = "Wrong";
+       hintEl.innerHTML = "<hr> Wrong";
        QuizQuestion3()
        });
        }
@@ -139,13 +138,13 @@ var btnW = document.querySelectorAll("#btn")
 
 
   btnC.addEventListener("click", function() {
-        hintEl.textContent = "Correct";
+        hintEl.innerHTML = "<hr> Correct";
         QuizQuestion4()
        });
 
   for (i of btnW) {
        i.addEventListener("click", function() {
-       hintEl.textContent = "Wrong";
+       hintEl.innerHTML = "<hr> Wrong";
        QuizQuestion4()
        });
        }
@@ -174,13 +173,13 @@ var btnW = document.querySelectorAll("#btn")
 
 
   btnC.addEventListener("click", function() {
-        hintEl.textContent = "Correct";
+        hintEl.innerHTML = "<hr> Correct";
         QuizQuestion5()
        });
 
   for (i of btnW) {
        i.addEventListener("click", function() {
-       hintEl.textContent = "Wrong";
+       hintEl.innerHTML = "<hr> Wrong";
        QuizQuestion5()
        });
        }
@@ -206,7 +205,7 @@ var btnC = document.querySelector("#btnC")
 var btnW = document.querySelectorAll("#btn")
 
   btnC.addEventListener("click", function() {
-        hintEl.textContent = "Correct";
+        hintEl.innerHTML = "<hr> Correct";
         //toStop();
         clearInterval(timerInterval)
         sendMessage();
@@ -215,7 +214,7 @@ var btnW = document.querySelectorAll("#btn")
 
   for (i of btnW) {
        i.addEventListener("click", function() {
-       hintEl.textContent = "Wrong";
+       hintEl.innerHTML = "<hr> Wrong";
        //toStop();
        clearInterval(timerInterval)
        sendMessage();
@@ -231,31 +230,16 @@ var timerInterval = setInterval(toStart, 1000)
 
 function toStart(){ 
   secondsLeft--;
-
   if(secondsLeft === 0) {
-   clearInterval(timerInterval);
-   sendMessage();
-  } 
-  var btnW = document.querySelectorAll("#btn")
-  for (i of btnW) {
-       i.addEventListener("click", function() {
-        if (this.clicked === true){
-          secondsLeft-= 15;
-        }
-       });
-       }
-     
+        clearInterval(timerInterval);
+        sendMessage();
+       } 
 
 
     timeEl.textContent = secondsLeft + " seconds remaining"
 };
 
-//function toStop(){
- // clearInterval(timerInterval)
-//}
-
 function sendMessage() {
-  //clearInterval(timerInterval);
   flashCardEl.innerHTML = " ";
   hintEl.textContent = "";
   var card = document.createElement("div");
@@ -283,8 +267,6 @@ function sendMessage() {
 btnEl.addEventListener("click", function(event){
 
 event.preventDefault()
-//clearInterval(timerInterval);
-
 flashCardEl.innerHTML = ""
 
 var highscores = document.querySelector(".highscores")
