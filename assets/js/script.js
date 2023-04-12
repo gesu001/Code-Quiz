@@ -101,11 +101,15 @@ var btnW = document.querySelectorAll("#btn")
 
   btnC.addEventListener("click", function() {
         hintEl.textContent = "Correct";
+       
         QuizQuestion3()
        });
 
   for (i of btnW) {
        i.addEventListener("click", function() {
+        if (this.clicked){
+          secondsLeft-= 15;
+        }
        hintEl.textContent = "Wrong";
        QuizQuestion3()
        });
@@ -232,6 +236,16 @@ function toStart(){
    clearInterval(timerInterval);
    sendMessage();
   } 
+  var btnW = document.querySelectorAll("#btn")
+  for (i of btnW) {
+       i.addEventListener("click", function() {
+        if (this.clicked === true){
+          secondsLeft-= 15;
+        }
+       });
+       }
+     
+
 
     timeEl.textContent = secondsLeft + " seconds remaining"
 };
