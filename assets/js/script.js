@@ -227,16 +227,18 @@ var timerInterval = setInterval(toStart, 1000)
 
 function toStart(){ 
   secondsLeft--;
-  timeEl.textContent = secondsLeft + " seconds remaining"
+
   if(secondsLeft === 0) {
    clearInterval(timerInterval);
    sendMessage();
   } 
+
+    timeEl.textContent = secondsLeft + " seconds remaining"
 };
 
-function toStop(){
-  clearInterval(timerInterval)
-}
+//function toStop(){
+ // clearInterval(timerInterval)
+//}
 
 function sendMessage() {
   //clearInterval(timerInterval);
@@ -289,4 +291,14 @@ scoreEl.innerHTML = "Highscores"+ "<br>" + localStorage.getItem("name") + ": " +
 
 returnBtn.textContent = "Go Back";
 clearBtn.textContent = "Clear Highscres";
+
+clearBtn.addEventListener("click", function(){
+  localStorage.clear();
+  scoreEl.innerHTML = "Highscores";
+})
+
+returnBtn.addEventListener("click", function(){
+  location.reload();
+})
 })}
+
